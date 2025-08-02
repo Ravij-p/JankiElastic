@@ -94,6 +94,65 @@
         animation: sparkle 1.5s infinite;
       }
 
+      /* Contact Info */
+      .contact-info {
+        text-align: center;
+        padding: 40px 0;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .contact-details {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        flex-wrap: wrap;
+        margin-top: 20px;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        background: rgba(255, 255, 255, 0.2);
+        padding: 15px 25px;
+        border-radius: 25px;
+        color: white;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(5px);
+      }
+
+      .contact-item:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .contact-icon {
+        font-size: 1.5rem;
+      }
+
+      .whatsapp-btn {
+        background: linear-gradient(45deg, #25d366, #128c7e);
+        border: none;
+        color: white;
+        padding: 12px 25px;
+        border-radius: 25px;
+        font-size: 1.1rem;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        transition: all 0.3s ease;
+      }
+
+      .whatsapp-btn:hover {
+        transform: scale(1.05);
+        box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+      }
+
       /* Moving Images Carousel */
       .carousel-section {
         padding: 80px 0;
@@ -120,12 +179,14 @@
 
       .carousel-track {
         display: flex;
-        animation: scroll 20s linear infinite;
+        animation: scroll 50s linear infinite;
         height: 100%;
+        width: calc(474px * 20); /* Double the images for seamless loop */
       }
 
       .carousel-slide {
         min-width: 454px;
+        width: 454px;
         height: 500px;
         margin-right: 20px;
         border-radius: 15px;
@@ -134,6 +195,7 @@
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
+        flex-shrink: 0;
       }
 
       .carousel-slide img {
@@ -141,57 +203,6 @@
         height: 100%;
         object-fit: cover;
         border-radius: 15px;
-      }
-
-      .carousel-slide:nth-child(11) {
-        background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        font-size: 1.2rem;
-        font-weight: 600;
-        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-      }
-
-      .carousel-slide:nth-child(12) {
-        background: linear-gradient(45deg, #a8edea 0%, #fed6e3 100%);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #333;
-        font-size: 1.2rem;
-        font-weight: 600;
-      }
-
-      .carousel-slide:nth-child(13) {
-        background: linear-gradient(45deg, #ffecd2 0%, #fcb69f 100%);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        font-size: 1.2rem;
-        font-weight: 600;
-      }
-
-      .carousel-slide:nth-child(14) {
-        background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        font-size: 1.2rem;
-        font-weight: 600;
-      }
-
-      .carousel-slide:nth-child(15) {
-        background: linear-gradient(45deg, #4ecdc4 0%, #44a08d 100%);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        font-size: 1.2rem;
-        font-weight: 600;
       }
 
       /* Factory Images Section */
@@ -326,6 +337,13 @@
         overflow: hidden;
       }
 
+      .factory-image-display img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 15px;
+      }
+
       .factory-back-content {
         position: relative;
         z-index: 2;
@@ -404,6 +422,13 @@
         right: 20px;
         bottom: 20px;
         border: 2px solid rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+      }
+
+      .director-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
         border-radius: 50%;
       }
 
@@ -533,6 +558,15 @@
           letter-spacing: 2px;
         }
 
+        .contact-details {
+          gap: 20px;
+        }
+
+        .contact-item {
+          font-size: 1rem;
+          padding: 12px 20px;
+        }
+
         .director-container {
           grid-template-columns: 1fr;
           text-align: center;
@@ -545,12 +579,18 @@
         }
 
         .carousel-container {
-          height: 250px;
+          height: 300px;
+        }
+
+        .carousel-track {
+          animation: scroll 30s linear infinite;
+          width: calc(320px * 20);
         }
 
         .carousel-slide {
-          min-width: 227px;
-          height: 250px;
+          min-width: 300px;
+          width: 300px;
+          height: 300px;
         }
 
         .factory-grid {
@@ -597,12 +637,36 @@
       </div>
     </section>
 
+    <!-- Contact Info Section -->
+    <section class="contact-info">
+      <div class="container">
+        <div class="contact-details">
+          <div class="contact-item">
+            <span class="contact-icon">📍</span>
+            <span>Nikol, Ahmedabad, Gujarat, India</span>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">📞</span>
+            <a href="tel:+919662211365">+91 9662211365</a>
+          </div>
+          <a
+            href="https://wa.me/919662211365"
+            class="whatsapp-btn"
+            target="_blank"
+          >
+            <span>WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
     <!-- Moving Images Carousel -->
     <section class="carousel-section">
       <div class="container">
         <h2 class="carousel-title">Our Product Gallery</h2>
         <div class="carousel-container">
           <div class="carousel-track">
+            <!-- First set of images -->
             <div class="carousel-slide">
               <img
                 src="/WhatsApp Image 2025-08-02 at 10.57.16_12728cbf.jpg"
@@ -663,12 +727,67 @@
                 alt="Product Image 10"
               />
             </div>
-            <!-- Duplicate for seamless loop -->
-            <div class="carousel-slide">Premium Elastic Bands</div>
-            <div class="carousel-slide">Industrial Grade Materials</div>
-            <div class="carousel-slide">Custom Solutions</div>
-            <div class="carousel-slide">Quality Textiles</div>
-            <div class="carousel-slide">Medical Grade Elastics</div>
+            <!-- Duplicate set for seamless loop -->
+            <div class="carousel-slide">
+              <img
+                src="/WhatsApp Image 2025-08-02 at 10.57.16_12728cbf.jpg"
+                alt="Product Image 1"
+              />
+            </div>
+            <div class="carousel-slide">
+              <img
+                src="/WhatsApp Image 2025-08-02 at 10.57.17_210a9ac5.jpg"
+                alt="Product Image 2"
+              />
+            </div>
+            <div class="carousel-slide">
+              <img
+                src="/WhatsApp Image 2025-08-02 at 10.57.17_27ee1b70.jpg"
+                alt="Product Image 3"
+              />
+            </div>
+            <div class="carousel-slide">
+              <img
+                src="/WhatsApp Image 2025-08-02 at 10.57.17_b14e33bb.jpg"
+                alt="Product Image 4"
+              />
+            </div>
+            <div class="carousel-slide">
+              <img
+                src="/WhatsApp Image 2025-08-02 at 10.57.18_5edb0bf7.jpg"
+                alt="Product Image 5"
+              />
+            </div>
+            <div class="carousel-slide">
+              <img
+                src="/WhatsApp Image 2025-08-02 at 10.57.18_66873348.jpg"
+                alt="Product Image 6"
+              />
+            </div>
+            <div class="carousel-slide">
+              <img
+                src="/WhatsApp Image 2025-08-02 at 10.57.18_f99e0ae2.jpg"
+                alt="Product Image 7"
+              />
+            </div>
+            <div class="carousel-slide">
+              <img
+                src="/WhatsApp Image 2025-08-02 at 10.57.19_12f03035.jpg"
+                alt="Product Image 8"
+              />
+            </div>
+            <div class="carousel-slide">
+              <img
+                src="/WhatsApp Image 2025-08-02 at 10.57.19_c64a180a.jpg"
+                alt="Product Image 9"
+              />
+            </div>
+            <div class="carousel-slide">
+              <img
+                src="/WhatsApp Image 2025-08-02 at 10.57.19_e2e9ce63.jpg"
+                alt="Product Image 10"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -695,7 +814,6 @@
                     <img
                       src="/WhatsApp Image 2025-08-02 at 11.33.31_4324ac0b.jpg"
                       alt="Machinery Image"
-                      class="factory-image-display"
                     />
                   </div>
                   <div class="factory-back-title">Production Floor</div>
@@ -722,6 +840,7 @@
                   <div class="factory-image-display">
                     <img
                       src="/WhatsApp Image 2025-08-02 at 11.12.48_8e394c0c.jpg"
+                      alt="Advanced Machinery"
                     />
                   </div>
                   <div class="factory-back-title">Machinery Department</div>
@@ -749,7 +868,6 @@
                     <img
                       src="/WhatsApp Image 2025-08-02 at 11.12.58_0645cb74.jpg"
                       alt="Quality Product"
-                      width="100%"
                     />
                   </div>
                   <div class="factory-back-title">Testing Laboratory</div>
@@ -777,7 +895,6 @@
                     <img
                       src="/WhatsApp Image 2025-08-02 at 11.12.48_b7890b04.jpg"
                       alt="Skilled Workforce"
-                      width="100%"
                     />
                   </div>
                   <div class="factory-back-title">Expert Team</div>
@@ -804,7 +921,7 @@
                   <div class="factory-image-display">
                     <img
                       src="/WhatsApp Image 2025-08-02 at 11.12.45_13b91275.jpg"
-                      width="100%"
+                      alt="Sustainable Practices"
                     />
                   </div>
                   <div class="factory-back-title">Green Manufacturing</div>
@@ -831,7 +948,7 @@
                   <div class="factory-image-display">
                     <img
                       src="/WhatsApp Image 2025-08-02 at 11.12.45_4eb51561.jpg"
-                      width="100%"
+                      alt="Efficient Packaging"
                     />
                   </div>
                   <div class="factory-back-title">Packaging Center</div>
@@ -852,7 +969,7 @@
       <div class="container">
         <div class="director-container">
           <div class="director-image">
-            <img src="/directors.jpg" width="100%" style="border-radius: 50%" />
+            <img src="/directors.jpg" alt="Director" />
           </div>
           <div class="director-content">
             <h2 class="director-title">Director's Message</h2>
